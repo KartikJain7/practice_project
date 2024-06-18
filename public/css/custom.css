@@ -1,0 +1,617 @@
+.home {
+  min-height: 620px;
+}
+@import '../node_modules/@syncfusion/ej2-base/styles/material.css';
+@import '../node_modules/@syncfusion/ej2-icons/styles/material.css';
+@import '../node_modules/@syncfusion/ej2-inputs/styles/material.css';
+@import '../node_modules/@syncfusion/ej2-popups/styles/material.css';
+@import '../node_modules/@syncfusion/ej2-buttons/styles/material.css';
+@import '../node_modules/@syncfusion/ej2-splitbuttons/styles/material.css';
+@import '../node_modules/@syncfusion/ej2-navigations/styles/material.css';
+@import '../node_modules/@syncfusion/ej2-layouts/styles/material.css';
+@import '../node_modules/@syncfusion/ej2-File managers/styles/material.css';
+@import "../node_modules/@syncfusion/ej2-react-filemanager/styles/material.css";
+.loader-main {
+  width: 110%;
+  height: 100%;
+  top: 0;
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  margin: 30px;
+  background-color: #ffffff;
+  opacity: 0.7;
+  margin: 5%;
+  font-weight: bold;
+  color: #000000;
+}
+
+body {
+  margin: 50px 50px;
+  padding: 0;
+  background: none;
+}
+.loader-wrapper {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.loder-crcil {
+  box-shadow: 3px 0 0px #000;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  animation: loader 1s linear infinite;
+}
+
+.text {
+  box-shadow: 0 0 4px hsla(0, 20%, 96%, 0.3);
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  top: 0;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 100px;
+  font-family: Monospace;
+  font-size: 13px;
+  font-weight: 900;
+  letter-spacing: 0.5px;
+  box-sizing: none;
+}
+
+@keyframes loader {
+  0% {
+    transform: rotate(0deg);
+  }
+  0% {
+    transform: rotate(360deg);
+  }
+}
+
+body {
+  text-align: center;
+}
+.popUp {
+  width: 280px;
+  height: 240px;
+  margin: 2px 0px 0px 1140px;
+  justify-content: left;
+  align-items: left;
+  background-color: whitesmoke;
+  position: absolute;
+  z-index: 1;
+  border: 3px solid #e5e4e2;
+  border-radius: 25px;
+
+  text-align: left;
+}
+.container {
+  display: flex;
+}
+
+.main-content {
+  flex: 1;
+}
+
+.side-popup {
+  position: fixed;
+  top: 65px;
+  right: 25px;
+
+  z-index: 1;
+
+  border-radius: 14px;
+}
+
+.side-popups {
+  position: fixed;
+  top: 185px;
+  right: 45px;
+
+  z-index: 1;
+
+  border-radius: 14px;
+}
+.text-columns {
+  margin-top: 20px;
+}
+
+.text-columns .column {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.text-columns .column i {
+  margin-right: 10px;
+  font-size: 38px;
+  color: #555;
+}
+
+.text-columns .column p {
+  margin: 0;
+  font-size: 66px;
+  color: #555;
+  text-align: justify;
+}
+.text-columns .column:not(:last-child) {
+  margin-bottom: 0px;
+  border-bottom: 2px solid #ccc;
+  padding-bottom: 0px;
+}
+.side-popup h1 {
+  margin-top: 0;
+  font-size: 20px;
+  font-weight: bold;
+  color: #333;
+  text-align: center;
+}
+.side-popup h6 {
+  margin-top: 0;
+  font-size: 15px;
+  font-weight: bold;
+  color: #555;
+  text-align: center;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.footer button {
+  padding: 8px 16px;
+  font-size: 14px;
+  color: #000;
+  background-color: #007bff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  border-radius: 24px;
+}
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .side-popup {
+    position: relative;
+    width: 100%;
+  }
+}
+.icon-container {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.icon {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: #007bff;
+}
+.heading-separator {
+  border-top: 3px solid #ddd;
+  margin: 10px 0;
+}
+.tree ul {
+  padding-top: 20px;
+  position: relative;
+
+  transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+}
+
+.tree li {
+  float: left;
+  text-align: center;
+  list-style-type: none;
+  position: relative;
+  padding: 20px 5px 0 5px;
+
+  transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+}
+
+/*We will use ::before and ::after to draw the connectors*/
+
+.tree li::before,
+.tree li::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 50%;
+  border-top: 2px solid #94a0b4;
+  width: 80%;
+  height: 20px;
+}
+.tree li::after {
+  right: auto;
+  left: 50%;
+  border-left: 2px solid #94a0b4;
+}
+
+/*We need to remove left-right connectors from elements without 
+any siblings*/
+.tree li:only-child::after,
+.tree li:only-child::before {
+  display: none;
+}
+
+/*Remove space from the top of single children*/
+.tree li:only-child {
+  padding-top: 0;
+}
+
+/*Remove left connector from first child and 
+right connector from last child*/
+.tree li:first-child::before,
+.tree li:last-child::after {
+  border: 0 none;
+}
+/*Adding back the vertical connector to the last nodes*/
+.tree li:last-child::before {
+  border-right: 2px solid #94a0b4;
+  border-radius: 0 5px 0 0;
+  -webkit-border-radius: 0 5px 0 0;
+  -moz-border-radius: 0 5px 0 0;
+}
+.tree li:first-child::after {
+  border-radius: 5px 0 0 0;
+  -webkit-border-radius: 5px 0 0 0;
+  -moz-border-radius: 5px 0 0 0;
+}
+
+/*Time to add downward connectors from parents*/
+.tree ul ul::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  border-left: 2px solid #94a0b4;
+  width: 0;
+  height: 20px;
+}
+
+.tree li a {
+  border: 2px solid #94a0b4;
+  padding: 10px 5px;
+  text-decoration: none;
+  color: #666;
+  font-family: arial, verdana, tahoma;
+  font-size: 18px;
+  display: inline-block;
+
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+
+  transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+}
+
+/*Time for some hover effects*/
+/*We will apply the hover effect the the lineage of the element also*/
+.tree li a:hover,
+.tree li a:hover + ul li a {
+  background: #c8e4f8;
+  color: #000;
+  border: 1px solid #94a0b4;
+}
+/*Connector styles on hover*/
+.tree li a:hover + ul li::after,
+.tree li a:hover + ul li::before,
+.tree li a:hover + ul::before,
+.tree li a:hover + ul ul::before {
+  border-color: #94a0b4;
+}
+.checkbox-container {
+  display: flex;
+  margin-left: auto;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.checkbox-container label {
+  font-size: 14px;
+  font-weight: 400 !important;
+  margin-bottom: 0px;
+}
+
+.checkbox-container input[type="checkbox"] {
+  margin-right: 5px;
+}
+.checkbox-container input[type="radio"] {
+  margin-right: 5px;
+}
+/* Style the select element */
+
+/* Style the dropdown arrow icon */
+
+.css-1s2u09g-control {
+  border-radius: 15px !important;
+  margin-right: 13px !important;
+}
+.css-1s2u09g-control input {
+  width: inherit !important;
+  padding: 0px !important;
+}
+.css-6j8wv5-Input {
+  border-radius: 15px !important;
+}
+.css-6j8wv5-Input input {
+  width: inherit !important;
+  padding: 0px !important;
+}
+
+.css-g1d714-ValueContainer {
+  border-radius: 15px !important;
+  padding: 0px !important;
+}
+.css-g1d714-ValueContainer input {
+  width: inherit !important;
+  padding: 0px !important;
+}
+
+.css-1rhbuit-multiValue {
+  border-radius: 15px !important;
+  padding: 0px !important;
+}
+.css-1rhbuit-multiValue input {
+  width: inherit !important;
+  padding: 0px !important;
+}
+
+.card-header {
+  background-color: transparent;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+  padding: 0.75rem 1.25rem;
+  position: relative;
+  border-top-left-radius: 0.25rem;
+  border-top-right-radius: 0.25rem;
+  padding: 20px 10px !important;
+}
+.select__control.css-1s2u09g-control {
+  border-radius: 6px !important;
+}
+.filter-choose label {
+  font-size: 14px;
+  font-weight: 400 !important;
+  margin-bottom: 0px;
+}
+.filter-choose-label {
+  font-size: 16px;
+  font-weight: 400 !important;
+
+  margin-top: 50px;
+}
+.filter-choose {
+  display: flex;
+  flex-direction: "row";
+  align-items: center;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  align-content: center;
+  margin: 5px;
+  padding: 20px 10px;
+}
+.filter-choosed label {
+  font-size: 14px;
+  font-weight: 400 !important;
+  margin-bottom: 0px;
+}
+.filter-choosed-label {
+  font-size: 16px;
+  font-weight: 400 !important;
+
+  margin-top: 50px;
+}
+.filter-choosed {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-bottom: 0px;
+  align-content: center;
+
+  padding: 15px 10px;
+}
+.select__control.css-1s2u09g-control {
+  width: 400px !important;
+}
+
+.firstfilterbar .filters-filter select {
+  grid-area: 1/2 !important;
+}
+.secondfilterbar .filter-filter {
+  margin-bottom: 10px;
+}
+.secondfilterbar .filter {
+  margin-bottom: 5px;
+  margin-left: 15px;
+}
+.secondfilterbar .filter input {
+  grid-area: 1/1/1/1 !important;
+  height: 5px !important;
+}
+.secondfilterbar .filter-filter input {
+  grid-area: 1 !important;
+}
+
+.card-header {
+  padding-left: 10px !important;
+  padding-bottom: 5px !important;
+}
+tr.table-2-tr th {
+  background-color: #fff;
+  border-bottom: 0;
+  box-shadow: inset 0 1px 0 #dee2e6, inset 0 -1px 0 #dee2e6;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 48px;
+  z-index: 10;
+}
+.tab {
+  overflow: hidden;
+  border: 2px solid #ccc;
+  background-color: #f1f1f1;
+  border-radius: 6px;
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+  background-image: "linear-gradient(#D3D3D3, white)";
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+  font-size: 17px;
+  width: 50%;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+  background-image: "linear-gradient(grey,#D3D3D3, white);";
+  background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-top: none;
+}
+tr.table-3-tr th {
+  background-color: #fff;
+  border-bottom: 0;
+  box-shadow: inset 0 1px 0 #dee2e6, inset 0 -1px 0 #dee2e6;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 77px;
+  z-index: 10;
+}
+tr.table-2-2-tr th {
+  background-color: #fff;
+  border-bottom: 0;
+  box-shadow: inset 0 1px 0 #dee2e6, inset 0 -1px 0 #dee2e6;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 42px;
+  z-index: 10;
+}
+
+.tab button {
+  background-color: #ddd;
+  font-weight: 600;
+}
+
+.tab button.active {
+  background-color: #ccc;
+}
+.canvas-divmain canvas {
+  width: 80% !important;
+  margin-top: 40px !important;
+}
+.canvas-divmains canvas {
+  width: 70% !important;
+
+  margin-top: 40px !important;
+  margin-left: 140px;
+}
+.canvas canvas {
+  width: 900px !important;
+  height: 400px !important;
+  margin-top: 40px !important;
+  margin-left: 60px !important;
+  align-items: center !important;
+}
+.border-table {
+  border: 4px solid #d9d9d9;
+}
+.nav-items {
+  width: 50%;
+  text-align: center;
+}
+
+.nav-items-coupon {
+  width: 33.33333333%;
+  text-align: center;
+}
+.card-body-hide {
+  display: none;
+}
+.card-body-show {
+  display: block;
+  margin-top: 10px;
+}
+.simple-border-grey {
+  border: 1px solid #d9d9d9;
+}
+.loader-main-div {
+  background: none;
+  width: 0px;
+  height: 0px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.error-text {
+  margin-left: 13px;
+  color: red;
+}
+.report-input {
+  border: 1px solid #d9d9d9;
+  border-radius: 6px;
+
+  padding: 2.9px 10px;
+  margin: 0px 20px;
+}
+.report-select {
+  border: 1px solid #d9d9d9;
+  border-radius: 6px;
+  background-color: inherit;
+  padding: 6px 20px;
+  margin: 0px 20px !important;
+  color: "#d9d9d9";
+}
+.side-deletepopup {
+  position: fixed;
+  top: 205px;
+  right: 525px;
+
+  z-index: 1;
+
+  border-radius: 14px;
+}
+.canvas-divmaiin canvas {
+  width: 100% !important;
+  margin-top: 40px !important;
+}
+.filter-label {
+  color: "#000";
+  margin-top: "60px";
+  margin-right: "70px";
+}
+.firstfilterbar .select__control {
+  width: 300px !important;
+}
+.secondfilterbar .select__control {
+  width: 300px !important;
+}
